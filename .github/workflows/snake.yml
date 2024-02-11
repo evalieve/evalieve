@@ -12,7 +12,7 @@ jobs:
     - name: Generate Snake Game
       uses: Platane/snk@master
       with:
-        github_user_name: username
+        github_user_name: evalieve
         svg_out_path: dist/github-contribution-grid-snake.svg
 
     - name: Deploy
