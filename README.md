@@ -6,6 +6,7 @@
   <img width="300" height="30" src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=A04BDE&center=true&random=false&width=435&lines=Student+at+Codam+Coding+College;Codam+Is+Part+Of+The+42+Network;Currently+Mainly+Programming+In+C">
 </p>
 
+<br><br><br>
 <p align="left">
 <img width="800" height="40" src=https://capsule-render.vercel.app/api?type=transparent&color=0:4e1c73,100:000000&height=50&section=header&text=Finished%20Projects&fontSize=30&fontColor=a04bde&fontAlign=6&fontAlignY=45&animation=twinkling>
 </p>
