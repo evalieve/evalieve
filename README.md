@@ -8,4 +8,5 @@
   <img width="800" height="200" src="https://github-readme-stats.vercel.app/api?username=evalieve&show_icons=true&theme=transparent&title_color=a04bde&hide_border=true&text_color=b485d6&icon_color=4e1c73&hide_title=true">
 </p>
 
-![Snake animation](https://github.com/thepiyushmalhotra/thepiyushmalhotra/blob/output/github-contribution-grid-snake.svg)
+![snake gif](https://github.com/evalieve/evalieve/blob/output/github-contribution-grid-snake.svg)
+
