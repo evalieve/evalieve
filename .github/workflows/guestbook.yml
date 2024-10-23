@@ -54,7 +54,6 @@ jobs:
                 return `${prev}| <a href="${curr.author.url}"><img width="24" src="${curr.author.avatarUrl}" alt="${curr.author.login}" /> ${curr.author.login}</a> |${new Date(curr.updatedAt).toLocaleString()}|${text}|\n`;
               }, "| Name | Date | Message |\n|---|---|---|\n");
 
-              return `<center>\n${commentTable}\n</center>`;
             };
 
             const fileSystem = require('fs');
