@@ -8,7 +8,6 @@
 <div align="center">
   <a href="https://github.com/evalieve/evalieve/issues/1">
     (Click here to add a new entry)
-	
   </a>
 </div>
 
