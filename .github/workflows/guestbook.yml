@@ -23,7 +23,7 @@ jobs:
             const query = `query($owner:String!, $name:String!, $issue_number:Int!) {
               repository(owner:$owner, name:$name){
                 issue(number:$issue_number) {
-                  comments(first:5, orderBy: {direction: DESC, field: UPDATED_AT}) {
+                  comments(first:5,orderBy:{direction:DESC, field:UPDATED_AT}) {
                     nodes {
                       author {
                         avatarUrl(size: 24)
@@ -54,7 +54,7 @@ jobs:
                 return `${prev}| <a href="${curr.author.url}"><img width="24" src="${curr.author.avatarUrl}" alt="${curr.author.login}" /> ${curr.author.login}</a> |${new Date(curr.updatedAt).toLocaleString()}|${text}|\n`;
               }, "| Name | Date | Message |\n|---|---|---|\n");
 
-              return `<div align="center">\n${commentTable}\n</div>`;
+              return `<center>\n${commentTable}\n</center>`;
             };
 
             const fileSystem = require('fs');
