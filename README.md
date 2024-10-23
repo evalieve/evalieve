@@ -1,7 +1,7 @@
 
 <!-- GIF -->
 <div align="center">
-  <img src="https://github.com/evalieve/evalieve/img/guestbook.gif" alt="Guestbook" width="200px" />
+  <img src="https://github.com/evalieve/evalieve/tree/main/img/guestbook.gif" alt="Guestbook" width="200px" />
 </div>
 
 <!-- Link to the action/issue page -->
