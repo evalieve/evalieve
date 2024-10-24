@@ -7,7 +7,7 @@ name: Guestbook
 jobs:
   update_guestbook:
     name: Update guestbook
-    if: github.event.issue.title == 'Guestbook'
+    if: ${{ github.event.issue.title == 'Guestbook' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -48,23 +48,13 @@ jobs:
             console.log(result); // Log the result to inspect
 
             const renderComments = (comments) => {
-              let guestbookContent = "<div align='center'>\n";
-
-              // If no comments exist, return a default empty table
-              if (!comments || comments.length === 0) {
-                guestbookContent += "| Name | Date | Message |\n|---|---|---|\n|  |  |  |\n</div>\n";
-                return guestbookContent;
-              }
-
-              // If comments exist, render them in the table
               const commentTable = comments.reduce((prev, curr) => {
                 let text = curr.bodyText.replace(/(\r\n|\r|\n)/g, "<br />").replace('|', '&#124;');
                 text = truncateString(text, 125);
-                return `${prev}\n| <a href="${curr.author.url}"><img width="24" src="${curr.author.avatarUrl}" alt="${curr.author.login}" /> ${curr.author.login}</a> | ${new Date(curr.updatedAt).toLocaleString()} | ${text} |\n`;
+                return `${prev}| <a href="${curr.author.url}"><img width="24" src="${curr.author.avatarUrl}" alt="${curr.author.login}" /> ${curr.author.login}</a> |${new Date(curr.updatedAt).toLocaleString()}|${text}|\n`;
               }, "| Name | Date | Message |\n|---|---|---|\n");
 
-              guestbookContent += commentTable + "\n</div>\n";
-              return guestbookContent;
+              return `<center>\n${commentTable}\n</center>`;
             };
 
             const fileSystem = require('fs');
@@ -72,22 +62,9 @@ jobs:
             const newReadme = readme.replace(/(?<=<!-- Guestbook -->.*\n)[\S\s]*?(?=<!-- \/Guestbook -->|$(?![\n]))/gm, renderComments(result.repository.issue.comments.nodes));
             fileSystem.writeFileSync('README.md', newReadme, 'utf8');
 
-      - name: Stage all changes
-        run: |
-          git add --all
-
-      - name: Commit changes before pulling
-        run: |
-          git config --global user.name 'Github Actions'
-          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'Auto-commit before pull' || echo "No changes to commit"
-
-      - name: Pull latest changes
-        run: git pull origin main --rebase
-
       - name: Push guestbook update
         run: |
           git config --global user.name 'Github Actions'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -am ':sparkles: update guestbook' || echo "No changes to commit"
-          git push origin main
+          git push
