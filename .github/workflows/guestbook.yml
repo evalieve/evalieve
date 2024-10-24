@@ -23,7 +23,7 @@ jobs:
             const query = `query($owner:String!, $name:String!, $issue_number:Int!) {
               repository(owner:$owner, name:$name){
                 issue(number:$issue_number) {
-                  comments(first:5,orderBy:{direction:DESC, field:UPDATED_AT}) {
+                  comments(first:5, orderBy: {direction: DESC, field: UPDATED_AT}) {
                     nodes {
                       author {
                         avatarUrl(size: 24)
@@ -48,9 +48,10 @@ jobs:
             console.log(result); // Log the result to inspect
 
             const renderComments = (comments) => {
+              // Start the guestbook with <div align="center"> and ensure proper spacing
               let guestbookContent = "<div align='center'>\n\n";
 
-              // If no comments exist, return a default empty table
+              // If no comments exist, return an empty table with proper formatting
               if (!comments || comments.length === 0) {
                 guestbookContent += "| Name | Date | Message |\n|---|---|---|\n|  |  |  |\n\n</div>\n";
                 return guestbookContent;
