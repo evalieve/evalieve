@@ -1,4 +1,3 @@
-
 <!-- GIF -->
 <div align="center">
   <img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/guestbook.gif" alt="Guestbook" width="400px" />
@@ -12,13 +11,8 @@
 </div>
 
 <!-- Guestbook -->
-<div align='center'>
-
+<!-- Table in pure Markdown (Markdown handles table rendering best) -->
 | Name | Date | Message |
 |---|---|---|
-
 | <a href="https://github.com/evalieve"><img width="24" src="https://avatars.githubusercontent.com/u/82043576?s=24&v=4" alt="evalieve" /> evalieve</a> | 10/24/2024, 1:28:59 AM | srs laatste |
-
-</div>
 <!-- /Guestbook -->
-</div>
