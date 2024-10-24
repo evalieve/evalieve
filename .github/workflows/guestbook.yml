@@ -7,7 +7,7 @@ name: Guestbook
 jobs:
   update_guestbook:
     name: Update guestbook
-    if: github.event.issue.title == 'Guestbook'  # Removing the extra `${{ ... }}` brackets
+    if: github.event.issue.title == 'Guestbook'
     runs-on: ubuntu-latest
 
     steps:
@@ -48,9 +48,12 @@ jobs:
             console.log(result); // Log the result to inspect
 
             const renderComments = (comments) => {
+              let guestbookContent = "<div align='center'>\n";
+
               // If no comments exist, return a default empty table
               if (!comments || comments.length === 0) {
-                return "| Name | Date | Message |\n|---|---|---|\n|  |  |  |\n";
+                guestbookContent += "| Name | Date | Message |\n|---|---|---|\n|  |  |  |\n</div>";
+                return guestbookContent;
               }
 
               // If comments exist, render them in the table
@@ -60,7 +63,8 @@ jobs:
                 return `${prev}| <a href="${curr.author.url}"><img width="24" src="${curr.author.avatarUrl}" alt="${curr.author.login}" /> ${curr.author.login}</a> |${new Date(curr.updatedAt).toLocaleString()}|${text}|\n`;
               }, "| Name | Date | Message |\n|---|---|---|\n");
 
-              return commentTable;
+              guestbookContent += commentTable + "</div>";
+              return guestbookContent;
             };
 
             const fileSystem = require('fs');
@@ -68,9 +72,13 @@ jobs:
             const newReadme = readme.replace(/(?<=<!-- Guestbook -->.*\n)[\S\s]*?(?=<!-- \/Guestbook -->|$(?![\n]))/gm, renderComments(result.repository.issue.comments.nodes));
             fileSystem.writeFileSync('README.md', newReadme, 'utf8');
 
+      - name: Pull latest changes
+        run: |
+          git pull origin main --rebase
+
       - name: Push guestbook update
         run: |
           git config --global user.name 'Github Actions'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -am ':sparkles: update guestbook' || echo "No changes to commit"
-          git push
+          git push origin main
