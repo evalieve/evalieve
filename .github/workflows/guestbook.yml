@@ -81,8 +81,16 @@ jobs:
         run: |
           git commit -m 'Auto-commit before pull' || echo "No changes to commit"
 
+      - name: Stash uncommitted changes (if any)
+        run: |
+          git stash || echo "Nothing to stash"
+
       - name: Pull latest changes with rebase
         run: git pull origin main --rebase
+
+      - name: Apply stashed changes (if any)
+        run: |
+          git stash pop || echo "No stashed changes to apply"
 
       - name: Push guestbook update
         run: |
