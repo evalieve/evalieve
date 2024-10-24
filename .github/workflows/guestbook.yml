@@ -48,32 +48,35 @@ jobs:
             console.log(result); // Log the result to inspect
 
             const renderComments = (comments) => {
-              // Start the guestbook with <div align="center"> and ensure proper spacing
+              // Start the guestbook with <div align="center"> for centering
               let guestbookContent = "<div align='center'>\n\n";
 
-              // If no comments exist, return an empty table with proper formatting
+              // Add the table header with proper formatting
+              guestbookContent += "| Name | Date | Message |\n|---|---|---|\n";
+
+              // If no comments exist, return an empty row
               if (!comments || comments.length === 0) {
-                guestbookContent += "| Name | Date | Message |\n|---|---|---|\n|  |  |  |\n\n</div>\n";
+                guestbookContent += "|  |  |  |\n";
                 return guestbookContent;
               }
 
               // If comments exist, render them in the table
               const commentTable = comments.reduce((prev, curr) => {
-                let text = curr.bodyText.replace(/(\r\n|\r|\n)/g, "<br />").replace('|', '&#124;'); // Replace newlines with <br /> and escape '|'
+                let text = curr.bodyText.replace(/(\r\n|\r|\n)/g, "<br />").replace('|', '&#124;'); // Handle newlines and special characters
                 text = truncateString(text, 125); // Truncate the text to avoid overflowing content
 
-                // Format the comment row like the header
+                // Format the comment row like the header and append to table content
                 return `${prev}\n| <a href="${curr.author.url}"><img width="24" src="${curr.author.avatarUrl}" alt="${curr.author.login}" /> ${curr.author.login}</a> | ${new Date(curr.updatedAt).toLocaleString()} | ${text} |\n`;
-              }, "| Name | Date | Message |\n|---|---|---|\n");
+              }, "");
 
-              guestbookContent += `${commentTable}\n</div>\n`;
-              return guestbookContent;
+              guestbookContent += `${commentTable}`;
+              return guestbookContent; // Only return the dynamic content (without the closing div)
             };
 
             const fileSystem = require('fs');
             const readme = fileSystem.readFileSync('README.md', 'utf8');
             const newReadme = readme.replace(/(?<=<!-- Guestbook -->.*\n)[\S\s]*?(?=<!-- \/Guestbook -->|$(?![\n]))/gm, renderComments(result.repository.issue.comments.nodes));
-            fileSystem.writeFileSync('README.md', newReadme, 'utf8');
+            fileSystem.writeFileSync('README.md', newReadme + '\n</div>\n', 'utf8'); // Closing </div> added here outside of guestbookContent
 
       # Stash uncommitted changes before pulling
       - name: Stash uncommitted changes
