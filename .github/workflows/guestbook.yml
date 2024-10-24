@@ -60,10 +60,10 @@ jobs:
               const commentTable = comments.reduce((prev, curr) => {
                 let text = curr.bodyText.replace(/(\r\n|\r|\n)/g, "<br />").replace('|', '&#124;');
                 text = truncateString(text, 125);
-                return `${prev}| <a href="${curr.author.url}"><img width="24" src="${curr.author.avatarUrl}" alt="${curr.author.login}" /> ${curr.author.login}</a> |${new Date(curr.updatedAt).toLocaleString()}|${text}|\n`;
+                return `${prev}\n| <a href="${curr.author.url}"><img width="24" src="${curr.author.avatarUrl}" alt="${curr.author.login}" /> ${curr.author.login}</a> |${new Date(curr.updatedAt).toLocaleString()}|${text}|\n`;
               }, "| Name | Date | Message |\n|---|---|---|\n");
 
-              guestbookContent += commentTable + "</div>\n";
+              guestbookContent += commentTable + "\n</div>\n";
               return guestbookContent;
             };
 
@@ -72,15 +72,15 @@ jobs:
             const newReadme = readme.replace(/(?<=<!-- Guestbook -->.*\n)[\S\s]*?(?=<!-- \/Guestbook -->|$(?![\n]))/gm, renderComments(result.repository.issue.comments.nodes));
             fileSystem.writeFileSync('README.md', newReadme, 'utf8');
 
-      - name: Commit staged changes (if any)
+      - name: Stage all changes
+        run: |
+          git add --all
+
+      - name: Commit changes before pulling
         run: |
           git config --global user.name 'Github Actions'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add --all
           git commit -m 'Auto-commit before pull' || echo "No changes to commit"
-
-      - name: Hard reset to clean state
-        run: git reset --hard
 
       - name: Pull latest changes
         run: git pull origin main --rebase
