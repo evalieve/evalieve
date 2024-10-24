@@ -48,13 +48,24 @@ jobs:
             console.log(result); // Log the result to inspect
 
             const renderComments = (comments) => {
+              // Use <div align="center"> instead of <center>
+              let guestbookContent = "<div align='center'>\n";
+
+              // If no comments exist, return a default empty table
+              if (!comments || comments.length === 0) {
+                guestbookContent += "| Name | Date | Message |\n|---|---|---|\n|  |  |  |\n</div>\n";
+                return guestbookContent;
+              }
+
+              // If comments exist, render them in the table
               const commentTable = comments.reduce((prev, curr) => {
                 let text = curr.bodyText.replace(/(\r\n|\r|\n)/g, "<br />").replace('|', '&#124;');
                 text = truncateString(text, 125);
-                return `${prev}| <a href="${curr.author.url}"><img width="24" src="${curr.author.avatarUrl}" alt="${curr.author.login}" /> ${curr.author.login}</a> |${new Date(curr.updatedAt).toLocaleString()}|${text}|\n`;
+                return `${prev}\n| <a href="${curr.author.url}"><img width="24" src="${curr.author.avatarUrl}" alt="${curr.author.login}" /> ${curr.author.login}</a> |${new Date(curr.updatedAt).toLocaleString()}|${text}|\n`;
               }, "| Name | Date | Message |\n|---|---|---|\n");
 
-              return `<center>\n${commentTable}\n</center>`;
+              guestbookContent += commentTable + "\n</div>\n";
+              return guestbookContent;
             };
 
             const fileSystem = require('fs');
@@ -70,16 +81,8 @@ jobs:
         run: |
           git commit -m 'Auto-commit before pull' || echo "No changes to commit"
 
-      - name: Stash uncommitted changes (if any)
-        run: |
-          git stash || echo "Nothing to stash"
-
       - name: Pull latest changes with rebase
         run: git pull origin main --rebase
-
-      - name: Apply stashed changes (if any)
-        run: |
-          git stash pop || echo "No stashed changes to apply"
 
       - name: Push guestbook update
         run: |
