@@ -19,4 +19,3 @@
 <!-- /Guestbook -->
 </div>
 
-</div>
