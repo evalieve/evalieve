@@ -60,7 +60,7 @@ jobs:
               const commentTable = comments.reduce((prev, curr) => {
                 let text = curr.bodyText.replace(/(\r\n|\r|\n)/g, "<br />").replace('|', '&#124;');
                 text = truncateString(text, 125);
-                return `${prev}\n| <a href="${curr.author.url}"><img width="24" src="${curr.author.avatarUrl}" alt="${curr.author.login}" /> ${curr.author.login}</a> |${new Date(curr.updatedAt).toLocaleString()}|${text}|\n`;
+                return `${prev}\n| <a href="${curr.author.url}"><img width="24" src="${curr.author.avatarUrl}" alt="${curr.author.login}" /> ${curr.author.login}</a> | ${new Date(curr.updatedAt).toLocaleString()} | ${text} |\n`;
               }, "| Name | Date | Message |\n|---|---|---|\n");
 
               guestbookContent += commentTable + "\n</div>\n";
