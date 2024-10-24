@@ -12,9 +12,10 @@
 </div>
 
 <!-- Guestbook -->
-<center>
+<div align='center'>
 | Name | Date | Message |
 |---|---|---|
-
-</center><!-- /Guestbook -->
+|  |  |  |
+</div>
+<!-- /Guestbook -->
 </div>
