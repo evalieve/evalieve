@@ -62,9 +62,15 @@ jobs:
             const newReadme = readme.replace(/(?<=<!-- Guestbook -->.*\n)[\S\s]*?(?=<!-- \/Guestbook -->|$(?![\n]))/gm, renderComments(result.repository.issue.comments.nodes));
             fileSystem.writeFileSync('README.md', newReadme, 'utf8');
 
+      - name: Pull latest changes from remote
+        run: |
+          git config --global user.name 'Github Actions'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git pull origin main --rebase
+
       - name: Push guestbook update
         run: |
           git config --global user.name 'Github Actions'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -am ':sparkles: update guestbook' || echo "No changes to commit"
-          git push
+          git push origin main
