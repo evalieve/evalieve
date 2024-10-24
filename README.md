@@ -12,8 +12,9 @@
 </div>
 
 <!-- Guestbook -->
+<div align="center">
 | Name | Date | Message |
 |---|---|---|
-| <a href="https://github.com/evalieve"><img width="24" src="https://avatars.githubusercontent.com/u/82043576?s=24&v=4" alt="evalieve" /> evalieve</a> |10/24/2024, 12:38:08 AM|test|
+|  |  |  |
 <!-- /Guestbook -->
 </div>
