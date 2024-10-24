@@ -45,15 +45,20 @@ jobs:
             };
 
             const result = await github.graphql(query, variables);
-            console.log(result); // Log the result to inspect
 
             const renderComments = (comments) => {
+              if (comments.length === 0) {
+                // If no comments, return an empty row
+                return "| Name | Date | Message |\n|---|---|---|\n|  |  |  |\n";
+              }
+
               const commentTable = comments.reduce((prev, curr) => {
                 let text = curr.bodyText.replace(/(\r\n|\r|\n)/g, "<br />").replace('|', '&#124;');
                 text = truncateString(text, 125);
                 return `${prev}| <a href="${curr.author.url}"><img width="24" src="${curr.author.avatarUrl}" alt="${curr.author.login}" /> ${curr.author.login}</a> |${new Date(curr.updatedAt).toLocaleString()}|${text}|\n`;
               }, "| Name | Date | Message |\n|---|---|---|\n");
 
+              return commentTable;
             };
 
             const fileSystem = require('fs');
