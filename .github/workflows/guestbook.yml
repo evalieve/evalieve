@@ -72,20 +72,26 @@ jobs:
             const newReadme = readme.replace(/(?<=<!-- Guestbook -->.*\n)[\S\s]*?(?=<!-- \/Guestbook -->|$(?![\n]))/gm, renderComments(result.repository.issue.comments.nodes));
             fileSystem.writeFileSync('README.md', newReadme, 'utf8');
 
-      - name: Stage all changes
-        run: |
-          git add --all
-
-      - name: Commit changes (if any)
-        run: |
-          git commit -m 'Auto-commit before pull' || echo "No changes to commit"
-
-      - name: Pull latest changes with rebase
-        run: git pull origin main --rebase
-
-      - name: Push guestbook update
+      # Stash uncommitted changes before pulling
+      - name: Stash uncommitted changes
         run: |
           git config --global user.name 'Github Actions'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git stash || echo "No changes to stash"
+
+      # Pull latest changes with rebase
+      - name: Pull latest changes
+        run: git pull origin main --rebase
+
+      # Apply stashed changes (if any)
+      - name: Apply stashed changes
+        run: |
+          git stash pop || echo "No changes to apply"
+
+      - name: Commit and push guestbook update
+        run: |
+          git config --global user.name 'Github Actions'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md
           git commit -am ':sparkles: update guestbook' || echo "No changes to commit"
           git push origin main
