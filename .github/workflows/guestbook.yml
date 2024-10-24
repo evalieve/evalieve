@@ -45,9 +45,10 @@ jobs:
             };
 
             const result = await github.graphql(query, variables);
+            console.log("Comments:", result.repository.issue.comments.nodes); // Log the fetched comments
 
             const renderComments = (comments) => {
-              if (comments.length === 0) {
+              if (!comments || comments.length === 0) {
                 // If no comments, return an empty row
                 return "| Name | Date | Message |\n|---|---|---|\n|  |  |  |\n";
               }
