@@ -13,6 +13,9 @@
 
 <!-- Guestbook -->
 <div align='center'>
-
-</div><!-- /Guestbook -->
+| Name | Date | Message |
+|---|---|---|
+|  |  |  |
+</div>
+<!-- /Guestbook -->
 </div>
