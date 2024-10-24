@@ -13,7 +13,7 @@
 
 <!-- Guestbook -->
 <div align="center">
-| Name | Date | Message |
+| Name | Date | Message |\n
 |---|---|---|
 |  |  |  |
 <!-- /Guestbook -->
