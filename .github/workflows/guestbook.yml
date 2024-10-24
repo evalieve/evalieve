@@ -52,7 +52,7 @@ jobs:
 
               // If no comments exist, return a default empty table
               if (!comments || comments.length === 0) {
-                guestbookContent += "| Name | Date | Message |\n|---|---|---|\n|  |  |  |\n</div>\n";
+                guestbookContent += "| Name | Date | Message |\n|---|---|---|\n|  |  |  |\n</div>";
                 return guestbookContent;
               }
 
@@ -63,7 +63,7 @@ jobs:
                 return `${prev}| <a href="${curr.author.url}"><img width="24" src="${curr.author.avatarUrl}" alt="${curr.author.login}" /> ${curr.author.login}</a> |${new Date(curr.updatedAt).toLocaleString()}|${text}|\n`;
               }, "| Name | Date | Message |\n|---|---|---|\n");
 
-              guestbookContent += commentTable + "</div>\n";
+              guestbookContent += commentTable + "</div>";
               return guestbookContent;
             };
 
