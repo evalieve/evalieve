@@ -52,7 +52,7 @@ jobs:
 
               // If no comments exist, return a default empty table
               if (!comments || comments.length === 0) {
-                guestbookContent += "| Name | Date | Message |\n|---|---|---|\n|  |  |  |\n</div>";
+                guestbookContent += "| Name | Date | Message |\n|---|---|---|\n|  |  |  |\n</div>\n";
                 return guestbookContent;
               }
 
@@ -63,7 +63,7 @@ jobs:
                 return `${prev}| <a href="${curr.author.url}"><img width="24" src="${curr.author.avatarUrl}" alt="${curr.author.login}" /> ${curr.author.login}</a> |${new Date(curr.updatedAt).toLocaleString()}|${text}|\n`;
               }, "| Name | Date | Message |\n|---|---|---|\n");
 
-              guestbookContent += commentTable + "</div>";
+              guestbookContent += commentTable + "</div>\n";
               return guestbookContent;
             };
 
@@ -72,13 +72,14 @@ jobs:
             const newReadme = readme.replace(/(?<=<!-- Guestbook -->.*\n)[\S\s]*?(?=<!-- \/Guestbook -->|$(?![\n]))/gm, renderComments(result.repository.issue.comments.nodes));
             fileSystem.writeFileSync('README.md', newReadme, 'utf8');
 
-      - name: Force add all changes
-        run: |
-          git add --all
-          git commit -m 'Auto-commit before pull' || echo "No changes to commit"
+      - name: Stash changes
+        run: git stash
 
       - name: Pull latest changes
         run: git pull origin main --rebase
+
+      - name: Apply stashed changes
+        run: git stash pop
 
       - name: Push guestbook update
         run: |
