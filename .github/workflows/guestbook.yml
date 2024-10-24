@@ -1,75 +1,77 @@
 on:
-  issue_comment:
-    types: [created, edited, deleted]
-
-name: Guestbook
-
-jobs:
-  update_guestbook:
-    name: Update guestbook
-    if: ${{ github.event.issue.title == 'Guestbook' }}
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Update guestbook from comments
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const truncateString = (str, num) => str.length > num ? str.slice(0, num) + "..." : str;
-
-            const query = `query($owner:String!, $name:String!, $issue_number:Int!) {
-              repository(owner:$owner, name:$name){
-                issue(number:$issue_number) {
-                  comments(first:5,orderBy:{direction:DESC, field:UPDATED_AT}) {
-                    nodes {
-                      author {
-                        avatarUrl(size: 24)
-                        login
-                        url
-                      }
-                      bodyText
-                      updatedAt
-                    }
-                  }
-                }
-              }
-            }`;
-
-            const variables = {
-              owner: context.repo.owner,
-              name: context.repo.repo,
-              issue_number: context.issue.number
-            };
-
-            const result = await github.graphql(query, variables);
-            console.log("Comments:", result.repository.issue.comments.nodes); // Log the fetched comments
-
-            const renderComments = (comments) => {
-              if (!comments || comments.length === 0) {
-                // If no comments, return an empty row
-                return "| Name | Date | Message |\n|---|---|---|\n|  |  |  |\n";
-              }
-
-              const commentTable = comments.reduce((prev, curr) => {
-                let text = curr.bodyText.replace(/(\r\n|\r|\n)/g, "<br />").replace('|', '&#124;');
-                text = truncateString(text, 125);
-                return `${prev}| <a href="${curr.author.url}"><img width="24" src="${curr.author.avatarUrl}" alt="${curr.author.login}" /> ${curr.author.login}</a> |${new Date(curr.updatedAt).toLocaleString()}|${text}|\n`;
-              }, "| Name | Date | Message |\n|---|---|---|\n");
-
-              return commentTable;
-            };
-
-            const fileSystem = require('fs');
-            const readme = fileSystem.readFileSync('README.md', 'utf8');
-            const newReadme = readme.replace(/(?<=<!-- Guestbook -->.*\n)[\S\s]*?(?=<!-- \/Guestbook -->|$(?![\n]))/gm, renderComments(result.repository.issue.comments.nodes));
-            fileSystem.writeFileSync('README.md', newReadme, 'utf8');
-
-      - name: Push guestbook update
-        run: |
-          git config --global user.name 'Github Actions'
-          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -am ':sparkles: update guestbook' || echo "No changes to commit"
-          git push
+	issue_comment:
+	  types: [created, edited, deleted]
+  
+  name: Guestbook
+  
+  jobs:
+	update_guestbook:
+	  name: Update guestbook
+	  if: ${{ github.event.issue.title == 'Guestbook' }}
+	  runs-on: ubuntu-latest
+  
+	  steps:
+		- name: Checkout repo
+		  uses: actions/checkout@v4
+  
+		- name: Update guestbook from comments
+		  uses: actions/github-script@v7
+		  with:
+			script: |
+			  const truncateString = (str, num) => str.length > num ? str.slice(0, num) + "..." : str;
+  
+			  const query = `query($owner:String!, $name:String!, $issue_number:Int!) {
+				repository(owner:$owner, name:$name){
+				  issue(number:$issue_number) {
+					comments(first:5,orderBy:{direction:DESC, field:UPDATED_AT}) {
+					  nodes {
+						author {
+						  avatarUrl(size: 24)
+						  login
+						  url
+						}
+						bodyText
+						updatedAt
+					  }
+					}
+				  }
+				}
+			  }`;
+  
+			  const variables = {
+				owner: context.repo.owner,
+				name: context.repo.repo,
+				issue_number: context.issue.number
+			  };
+  
+			  const result = await github.graphql(query, variables);
+			  console.log(result); // Log the result to inspect
+  
+			  const renderComments = (comments) => {
+				// If no comments exist, return a default empty table
+				if (!comments || comments.length === 0) {
+				  return "| Name | Date | Message |\n|---|---|---|\n|  |  |  |\n";
+				}
+  
+				// If comments exist, render them in the table
+				const commentTable = comments.reduce((prev, curr) => {
+				  let text = curr.bodyText.replace(/(\r\n|\r|\n)/g, "<br />").replace('|', '&#124;');
+				  text = truncateString(text, 125);
+				  return `${prev}| <a href="${curr.author.url}"><img width="24" src="${curr.author.avatarUrl}" alt="${curr.author.login}" /> ${curr.author.login}</a> |${new Date(curr.updatedAt).toLocaleString()}|${text}|\n`;
+				}, "| Name | Date | Message |\n|---|---|---|\n");
+  
+				return commentTable;
+			  };
+  
+			  const fileSystem = require('fs');
+			  const readme = fileSystem.readFileSync('README.md', 'utf8');
+			  const newReadme = readme.replace(/(?<=<!-- Guestbook -->.*\n)[\S\s]*?(?=<!-- \/Guestbook -->|$(?![\n]))/gm, renderComments(result.repository.issue.comments.nodes));
+			  fileSystem.writeFileSync('README.md', newReadme, 'utf8');
+  
+		- name: Push guestbook update
+		  run: |
+			git config --global user.name 'Github Actions'
+			git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+			git commit -am ':sparkles: update guestbook' || echo "No changes to commit"
+			git push
+  
