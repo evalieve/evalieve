@@ -1,6 +1,6 @@
 <!-- Welcome text -->
-<h1 align="center">Welcome</h1>
 <div align="center">
+<h1>Welcome</h1>
   My name is
 </div>
 
@@ -14,6 +14,21 @@
 
 <!-- PNG -->
 <div align="center">
+  <img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/Ongoing-Projects.png" alt="Eva Lieve" width="300px" />
+</div>
+<!-- Finished Projects Table -->
+<div align="center">
+
+| Project Name | Start Date | Description |
+|---|---|---|
+| [webserv](https://github.com/evalieve/webserv) | 2024-09-09 | A detailed description of Project Alpha, focusing on its purpose and key features. |
+
+</div>
+
+<br><br>
+
+<!-- PNG -->
+<div align="center">
   <img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/Finished-Projects.png" alt="Eva Lieve" width="300px" />
 </div>
 <!-- Finished Projects Table -->
@@ -21,7 +36,6 @@
 
 | Project Name | Completion Date | Description |
 |---|---|---|
-| [webserv](https://github.com/evalieve/webserv) | 2024-31-10 | A detailed description of Project Alpha, focusing on its purpose and key features. |
 | [cpp modules](https://github.com/evalieve/cpp_modules) | 2024-09-06 | A detailed description of Project Alpha, focusing on its purpose and key features. |
 | [cub3D](https://github.com/evalieve/cub3D) | 2024-07-06 | An innovative solution tackling user experience challenges in web design. |
 | [philosophers](https://github.com/evalieve/philosophers) | 2023-07-16 | A mobile application for tracking daily tasks with a sleek, user-friendly interface. |
