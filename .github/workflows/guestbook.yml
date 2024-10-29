@@ -66,7 +66,7 @@ jobs:
                 text = truncateString(text, 125); // Truncate the text to avoid overflowing content
 
                 // Add a newline only after each row
-                return `${prev}| <a href="${curr.author.url}"><img width="24" src="${curr.author.avatarUrl}" alt="${curr.author.login}" /> ${curr.author.login}</a> | ${new Date(curr.updatedAt).toLocaleString()} | ${text} |\n`;
+                return `${prev}| <div style="display: flex; align-items: center; justify-content: center; height: 100%;"> <a href="${curr.author.url}"><img width="24" src="${curr.author.avatarUrl}" alt="${curr.author.login}" /> ${curr.author.login}</a> </div> | ${new Date(curr.updatedAt).toLocaleString()} | ${text} |\n`;
               }, "");  // Start with an empty string (no newlines at the start)
 
               guestbookContent += `${commentTable}`;
