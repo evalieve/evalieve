@@ -14,7 +14,7 @@
 
 <!-- PNG -->
 <div align="center">
-  <img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/Finished-projects.png" alt="Eva Lieve" width="300px" />
+  <img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/Finished-Projects.png" alt="Eva Lieve" width="300px" />
 </div>
 <!-- Finished Projects Table -->
 <div align="center">
