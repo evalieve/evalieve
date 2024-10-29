@@ -1,12 +1,10 @@
-<!-- Welcome Text -->
-<div align="center">
-  <h2>Welcome, my name is</h2>
-</div>
 
 <!-- PNG -->
 <div align="center">
   <img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/Eva-lieve.png" alt="Eva Lieve" width="300px" />
 </div>
+
+<br><br>
 
 <!-- GIF -->
 <div align="center">
