@@ -1,7 +1,7 @@
 
 <!-- PNG -->
 <div align="center">
-  <img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/Eva-lieve.png" alt="Eva Lieve" width="300px" />
+  <img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/Eva-lieve.png" alt="Eva Lieve" width="500px" />
 </div>
 
 <br><br>
