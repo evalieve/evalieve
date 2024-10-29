@@ -36,6 +36,7 @@
 
 | Project Name | Completion Date | Description |
 |---|---|---|
+| [inception](https://github.com/evalieve/cpp_modules) | 2024-10-21 | The Inception project sets up Nginx, MariaDB, and WordPress with Docker, focusing on containerization and seamless service integration. |
 | [cpp_modules](https://github.com/evalieve/cpp_modules) | 2024-09-06 | The C++ Modules project dives into core C++ concepts, emphasizing object-oriented programming, memory management, and advanced language features. |
 | [cub3D](https://github.com/evalieve/cub3D) | 2024-07-06 | The goal of this project is to create a basic 3D game engine using raycasting, focusing on graphics rendering, player movement, and environmental interaction. |
 | [philosophers](https://github.com/evalieve/philosophers) | 2023-07-16 | Philosophers involves solving the classic dining philosophers problem, focusing on managing concurrency, synchronization, and preventing deadlocks. |
