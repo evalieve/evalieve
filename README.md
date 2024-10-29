@@ -15,8 +15,9 @@
 
 | Name | Date | Message |
 |---|---|---|
-| <a href="https://github.com/steryu"><img width="24" src="https://avatars.githubusercontent.com/u/95487148?s=24&v=4" alt="steryu" /> steryu</a> | 10/29/2024, 6:28:55 PM | my favorite github place to visit |
-| <a href="https://github.com/vockers"><img width="24" src="https://avatars.githubusercontent.com/u/76734915?s=24&u=9f3042f098dd8059657bc0d2a790d1ebc9714b55&v=4" alt="vockers" /> vockers</a> | 10/24/2024, 3:31:46 PM | First! |
+| <div style="display: flex; align-items: center; justify-content: center; height: 100%;"> <a href="https://github.com/evalieve"><img width="24" src="https://avatars.githubusercontent.com/u/82043576?s=24&u=7e56ab7d724b5f51c5ac0c13db5f45836e3af33a&v=4" alt="evalieve" /> evalieve</a> </div> | 10/29/2024, 10:39:08 PM | test |
+| <div style="display: flex; align-items: center; justify-content: center; height: 100%;"> <a href="https://github.com/steryu"><img width="24" src="https://avatars.githubusercontent.com/u/95487148?s=24&v=4" alt="steryu" /> steryu</a> </div> | 10/29/2024, 6:28:55 PM | my favorite github place to visit |
+| <div style="display: flex; align-items: center; justify-content: center; height: 100%;"> <a href="https://github.com/vockers"><img width="24" src="https://avatars.githubusercontent.com/u/76734915?s=24&u=9f3042f098dd8059657bc0d2a790d1ebc9714b55&v=4" alt="vockers" /> vockers</a> </div> | 10/24/2024, 3:31:46 PM | First! |
 <!-- /Guestbook -->
 </div>
 
