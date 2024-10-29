@@ -1,6 +1,6 @@
 <!-- Welcome text -->
 <div align="center">
-<h1>Welcome</h1>
+<h1>WELCOME</h1>
   My name is
 </div>
 
