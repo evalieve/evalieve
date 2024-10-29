@@ -76,7 +76,7 @@ jobs:
             const fileSystem = require('fs');
             const readme = fileSystem.readFileSync('README.md', 'utf8');
             const newReadme = readme.replace(/(?<=<!-- Guestbook -->.*\n)[\S\s]*?(?=<!-- \/Guestbook -->|$(?![\n]))/gm, renderComments(result.repository.issue.comments.nodes));
-            fileSystem.writeFileSync('README.md', newReadme + '\n</div>\n', 'utf8'); // Closing </div> added here outside of guestbookContent
+            fileSystem.writeFileSync('README.md', newReadme, 'utf8'); 
 
       # Stash uncommitted changes before pulling
       - name: Stash uncommitted changes
