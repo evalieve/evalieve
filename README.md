@@ -19,7 +19,7 @@
 <!-- Finished Projects Table -->
 <div align="center">
 
-| Project Name | Start Date | Description |
+| Project Name |ㅤ StartingㅤㅤDateㅤ | Description |
 |---|---|---|
 | [webserv](https://github.com/evalieve/webserv) | 2024-09-09 | This project is about creating a minimal HTTP server, focusing on processing requests, managing client connections, and implementing HTTP standards. |
 
