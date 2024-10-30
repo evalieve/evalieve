@@ -24,7 +24,7 @@
 
 | Project Name |ㅤ StartingㅤㅤDate ㅤ| Description |
 |---|---|---|
-|[<img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/42.jpg" width="20px"/>](https://www.42network.org/)&nbsp;[ft_transcendence](https://github.com/evalieve/ft_transcendence) |  | *Ft_transcendence* involves creating a full-stack web application with real-time interactions, secure user authentication, and a responsive interface for a dynamic user experience. |
+|[<img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/42.jpg" width="20px"/>](https://www.42network.org/)&nbsp;[ft_transcendence](https://github.com/evalieve/ft_transcendence) |  | Ft_transcendence involves creating a full-stack web application with real-time interactions, secure user authentication, and a responsive interface for a dynamic user experience. |
 | [<img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/42.jpg" width="20px"/>](https://www.42network.org/)&nbsp;[webserv](https://github.com/evalieve/webserv) | 2024-09-09 | This project is about creating a minimal HTTP server, focusing on processing requests, managing client connections, and implementing HTTP standards. |
 
 </div>
