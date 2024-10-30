@@ -21,7 +21,7 @@
 
 | Project Name |ㅤ StartingㅤDate | Description |
 |---|---|---|
-| [ft_transcendence](https://github.com/evalieve/ft_transcendence) | 2024-09-09 | Ft_transcendence involves creating a full-stack web application with real-time interactions, secure user authentication, and a responsive interface for a dynamic user experience. |
+| [ft_transcendence](https://github.com/evalieve/ft_transcendence) |  | Ft_transcendence involves creating a full-stack web application with real-time interactions, secure user authentication, and a responsive interface for a dynamic user experience. |
 | [webserv](https://github.com/evalieve/webserv) | 2024-09-09 | This project is about creating a minimal HTTP server, focusing on processing requests, managing client connections, and implementing HTTP standards. |
 
 </div>
