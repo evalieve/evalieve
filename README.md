@@ -7,13 +7,16 @@
 
 <!-- PNG -->
 <div align="center">
-  <img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/Eva-lieve.png" alt="Eva Lieve" width="500px" />
+  <a href="https://github.com/evalieve">
+    <img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/Eva-lieve.png" alt="Eva Lieve" width="500px" />
+  </a>
 </div>
 
 <br><br><br>
 
 <!-- PNG -->
 <div align="center">
+  <a href="https://github.com/evalieve">
   <img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/Ongoing-Projects.png" alt="Eva Lieve" width="300px" />
 </div>
 <!-- Finished Projects Table -->
@@ -32,6 +35,7 @@
 
 <!-- PNG -->
 <div align="center">
+  <a href="https://github.com/evalieve">
   <img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/Finished-Projects.png" alt="Eva Lieve" width="300px" />
 </div>
 <!-- Finished Projects Table -->
@@ -57,6 +61,7 @@
 
 <!-- GIF -->
 <div align="center">
+  <a href="https://github.com/evalieve/evalieve/issues/1">
   <img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/guestbook.gif" alt="Guestbook" width="300px" />
 </div>
 
