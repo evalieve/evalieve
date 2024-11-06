@@ -25,7 +25,7 @@
 | Project Name |ㅤ StartingㅤㅤDate ㅤ| Description |
 |---|---|---|
 |[<img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/42.jpg" width="20px"/>](https://www.42network.org/)&nbsp;[ft_transcendence](https://github.com/evalieve/ft_transcendence) |  | Ft_transcendence involves creating a full-stack web application with real-time interactions, secure user authentication, and a responsive interface for a dynamic user experience. |
-| [<img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/42.jpg" width="20px"/>](https://www.42network.org/)&nbsp;[webserv](https://github.com/evalieve/webserv) | 2024-09-09 | This project is about creating a minimal HTTP server, focusing on processing requests, managing client connections, and implementing HTTP standards. |
+| [<img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/itchio.png" width="20px"/>](https://itch.io/jam/game-off-2024)&nbsp;[itch.io Game Off](https://github.com/evalieve/PotionOfTheHeart) | 2024-01-11 | For the itch.io jam 2024, our game follows a witch brewing a love potion, bringing mystery and magic to the 'secrets' theme. |
 
 </div>
 
@@ -43,6 +43,7 @@
 
 | Project Name | Completion Date | Description |
 |---|---|---|
+| [<img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/42.jpg" width="20px"/>](https://www.42network.org/)&nbsp;[webserv](https://github.com/evalieve/webserv) | 2024-01-11 | This project is about creating a minimal HTTP server, focusing on processing requests, managing client connections, and implementing HTTP standards. |
 | [<img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/42.jpg" width="20px"/>](https://www.42network.org/)&nbsp;[inception](https://github.com/evalieve/cpp_modules) | 2024-10-21 | The Inception project sets up Nginx, MariaDB, and WordPress with Docker, focusing on containerization and seamless service integration. |
 | [<img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/42.jpg" width="20px"/>](https://www.42network.org/)&nbsp;[cpp_modules](https://github.com/evalieve/cpp_modules) | 2024-09-06 | The C++ Modules project dives into core C++ concepts, emphasizing object-oriented programming, memory management, and advanced language features. |
 | [<img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/42.jpg" width="20px"/>](https://www.42network.org/)&nbsp;[cub3D](https://github.com/evalieve/cub3D) | 2024-07-06 | The goal of this project is to create a basic 3D game engine using raycasting, focusing on graphics rendering, player movement, and environmental interaction. |
