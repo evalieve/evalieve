@@ -82,7 +82,7 @@
 <!-- /Guestbook -->
 </div>
 
-<br>
+<br><br><br>
 
 <!-- PNG -->
 <div align="center">
@@ -90,7 +90,7 @@
   <img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/Profile-views.png" alt="Profile Views" width="300px" />
 </div>
     
-<br><br>
+<br>
 
 <div align="center">
   <img src="https://profile-counter.glitch.me/evalieve/count.svg?"  />
