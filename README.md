@@ -24,7 +24,7 @@
 
 | Project Name |ㅤ StartingㅤㅤDate ㅤ| Description |
 |---|---|---|
-|[<img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/42.jpg" width="20px"/>](https://www.42network.org/)&nbsp;[ft_transcendence](https://github.com/lithiumox-codam/transcendence)) | 2024-11-11 | Ft_transcendence involves creating a full-stack web application with real-time interactions, secure user authentication, and a responsive interface for a dynamic user experience. |
+|[<img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/42.jpg" width="20px"/>](https://www.42network.org/)&nbsp;[ft_transcendence](https://github.com/lithiumox-codam/transcendence) | 2024-11-11 | Ft_transcendence involves creating a full-stack web application with real-time interactions, secure user authentication, and a responsive interface for a dynamic user experience. |
 | [<img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/itchio.jpg" width="20px"/>](https://itch.io/jam/game-off-2024)&nbsp;[itch.io Game Off](https://github.com/evalieve/PotionOfTheHeart) | 2024-01-11 | For the itch.io jam 2024, our game follows a witch brewing a love potion, bringing mystery and magic to the 'secrets' theme. |
 
 </div>
