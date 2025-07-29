@@ -24,7 +24,7 @@
 
 | Project Name |ㅤ StartingㅤㅤDate ㅤ| Description |
 |---|---|---|
-|[<img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/42.jpg" width="20px"/>](https://www.42network.org/)&nbsp;[ft_transcendence](https://github.com/lithiumox-codam/transcendence) | 2024-11-11 | Ft_transcendence involves creating a full-stack web application with real-time interactions, secure user authentication, and a responsive interface for a dynamic user experience. |
+
 
 </div>
 
@@ -42,6 +42,7 @@
 
 | Project Name | Completion Date | Description |
 |---|---|---|
+|[<img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/42.jpg" width="20px"/>](https://www.42network.org/)&nbsp;[ft_transcendence](https://github.com/lithiumox-codam/transcendence) | 2025-05-21 | Ft_transcendence involves creating a full-stack web application with real-time interactions, secure user authentication, and a responsive interface for a dynamic user experience. |
 | [<img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/42.jpg" width="20px"/>](https://www.42network.org/)&nbsp;[webserv](https://github.com/vockers/webserv) | 2024-01-11 | This project is about creating a minimal HTTP server, focusing on processing requests, managing client connections, and implementing HTTP standards. |
 | [<img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/42.jpg" width="20px"/>](https://www.42network.org/)&nbsp;[inception](https://github.com/evalieve/inception) | 2024-10-21 | The Inception project sets up Nginx, MariaDB, and WordPress with Docker, focusing on containerization and seamless service integration. |
 | [<img src="https://raw.githubusercontent.com/evalieve/evalieve/main/img/42.jpg" width="20px"/>](https://www.42network.org/)&nbsp;[cpp_modules](https://github.com/evalieve/cpp_modules) | 2024-09-06 | The C++ Modules project dives into core C++ concepts, emphasizing object-oriented programming, memory management, and advanced language features. |
